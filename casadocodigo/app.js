@@ -1,13 +1,10 @@
-var express = require("express");
-var app = express();
+//Carrega o modulo que configura o Express
+var app = require('./config/express')();
 
-app.set('view engine','ejs');
+//Configuração de rota para /produtos
+var rotasProdutos = require('./app/routes/produtos')(app);
 
-app.get('/produtos', function (req, res) {
-    res.render("produtos/lista");
-
-});
-
+//Fazer o servidor rodar, escutando a porta 3000
 app.listen(3000, function () {
     console.log("servidor rodando");
 });
