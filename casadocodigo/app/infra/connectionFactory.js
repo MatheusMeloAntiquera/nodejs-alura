@@ -1,7 +1,7 @@
 var mysql = require('mysql');
 
-module.exports = function () {
 
+function createDBConnection() {
     return connection = mysql.createConnection({
         host: 'localhost',
         user: 'root',
@@ -10,3 +10,8 @@ module.exports = function () {
     });
 
 }
+
+module.exports = function () {
+    return createDBConnection;
+}
+
