@@ -8,7 +8,7 @@ module.exports = function (app) {
 
 
         produtosBanco.lista(function (err, results) {
-
+            console.log(err);
             res.format({
                 html: function () {
                     res.render('produtos/lista', { lista: results });
